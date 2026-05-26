@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,27 +8,29 @@
 
 body {
     height: 100vh;
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Inter', "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .container {
     background: #ffffff;
-    width: 420px;
-    padding: 35px 30px;
-    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 30px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.6s ease-in-out;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
     to {
         opacity: 1;
@@ -35,64 +39,100 @@ body {
 }
 
 h1 {
-    color: #2c5364;
-    margin-bottom: 8px;
-    font-size: 26px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 22px;
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
 
 input {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     font-size: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
     outline: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    color: #334155;
 }
 
 input:focus {
-    border-color: #2c5364;
-    box-shadow: 0 0 6px rgba(44, 83, 100, 0.3);
+    border-color: #38bdf8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+}
+
+input::placeholder {
+    color: #94a3b8;
 }
 
 button {
-    margin-top: 18px;
+    margin-top: 20px;
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
-    background: linear-gradient(135deg, #11998e, #38ef7d);
+    font-weight: 600;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
 }
 
 button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(56, 239, 125, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, #0369a1, #0284c7);
 }
 
 .result {
     margin-top: 25px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 12px;
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .safe {
-    background: #e6f9f0;
-    color: #0a7a3b;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
 }
 
 .phishing {
-    background: #fdeaea;
-    color: #b00020;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 22px;
+    }
 }
